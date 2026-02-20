@@ -1,21 +1,485 @@
+/* ================================================================
+   X-ZONE LANDING PAGE — MASTER STYLESHEET
+   Organized by: Theme → Background → Typography → Glass → Layout →
+   Gradients → Buttons → Components → Responsive
+   ================================================================ */
+
 @import "tailwindcss";
 
+/* ----------------------------------------------------------------
+   1. THEME TOKENS
+   ---------------------------------------------------------------- */
 @theme {
-  --color-text: #fff;
+  --color-primary: #0a0e27;
+  --color-primary-light: #111638;
+  --color-primary-lighter: #1a1f4a;
+  --color-accent-blue: #2563eb;
+  --color-accent-purple: #d946ef;
+  --color-accent-cyan: #22d3ee;
+  --color-text: #ffffff;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #64748b;
+  --color-border-glass: rgba(255, 255, 255, 0.08);
+  --color-glow-blue: rgba(37, 99, 235, 0.4);
+  --color-glow-purple: rgba(217, 70, 239, 0.3);
+}
+
+/* ----------------------------------------------------------------
+   2. BODY & BACKGROUND STYLES
+   ---------------------------------------------------------------- */
+body {
+  @apply bg-primary font-sans text-text antialiased;
+  scroll-behavior: smooth;
 }
 
 .gradient-background {
-  background: linear-gradient(180deg, #2563eb 0%, #d946ef 100%);
+  background: linear-gradient(
+    135deg,
+    #0a0e27 0%,
+    #111638 40%,
+    #1a1048 70%,
+    #0a0e27 100%
+  );
 }
 
-.gradient-btn {
-  background: linear-gradient(90deg, #2563eb 0%, #d946ef 100%);
+.section-bg-dark {
+  @apply bg-primary-light;
 }
 
+/* Decorative glow orbs — add to sections for ambient lighting */
+.glow-orb {
+  @apply absolute rounded-full blur-3xl opacity-20 pointer-events-none;
+}
+.glow-orb-blue {
+  background: radial-gradient(
+    circle,
+    var(--color-accent-blue) 0%,
+    transparent 70%
+  );
+}
+.glow-orb-purple {
+  background: radial-gradient(
+    circle,
+    var(--color-accent-purple) 0%,
+    transparent 70%
+  );
+}
+
+/* ----------------------------------------------------------------
+   3. TYPOGRAPHY
+   ---------------------------------------------------------------- */
+.heading-xl {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold text-text leading-tight tracking-tight;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl font-bold text-text leading-snug text-center;
+}
+
+.heading-md {
+  @apply text-xl md:text-2xl font-semibold text-text;
+}
+
+.heading-sm {
+  @apply text-lg font-semibold text-text;
+}
+
+.body-text {
+  @apply text-base text-text-muted leading-relaxed;
+}
+
+.body-text-sm {
+  @apply text-sm text-text-dim leading-relaxed;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-blue),
+    var(--color-accent-purple)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ----------------------------------------------------------------
+   4. GLASSMORPHISM
+   ---------------------------------------------------------------- */
+.glass-card {
+  @apply relative rounded-2xl border p-6;
+  background: rgba(17, 22, 56, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card-hover {
+  @apply transition-all duration-300 ease-in-out;
+}
+.glass-card-hover:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow:
+    0 0 30px rgba(37, 99, 235, 0.12),
+    0 0 60px rgba(217, 70, 239, 0.06);
+  transform: translateY(-4px);
+}
+
+.glass-card-glow {
+  @apply relative overflow-hidden;
+}
+.glass-card-glow::before {
+  content: "";
+  @apply absolute -top-1/2 -left-1/2 w-full h-full rounded-full opacity-0 transition-opacity duration-500;
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.15) 0%,
+    transparent 70%
+  );
+}
+.glass-card-glow:hover::before {
+  @apply opacity-100;
+}
+
+/* ----------------------------------------------------------------
+   5. SECTION PADDING & MARGIN
+   ---------------------------------------------------------------- */
 .section__padding {
   padding: 4rem 6rem;
 }
 
 .section__margin {
   margin: 4rem 6rem;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-header {
+  @apply text-center mb-12;
+}
+
+.section-header .body-text {
+  @apply max-w-2xl mx-auto mt-4;
+}
+
+/* ----------------------------------------------------------------
+   6. GRADIENT UTILITIES
+   ---------------------------------------------------------------- */
+.gradient-btn {
+  background: linear-gradient(90deg, #2563eb 0%, #d946ef 100%);
+}
+
+.gradient-border {
+  @apply relative;
+}
+.gradient-border::before {
+  content: "";
+  @apply absolute inset-0 rounded-2xl p-px;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-blue),
+    var(--color-accent-purple)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.gradient-divider {
+  @apply h-px w-full;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-accent-blue) 50%,
+    transparent 100%
+  );
+}
+
+/* ----------------------------------------------------------------
+   7. BUTTON STYLES
+   ---------------------------------------------------------------- */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-text text-sm
+         transition-all duration-300 ease-in-out cursor-pointer;
+  background: linear-gradient(90deg, #2563eb 0%, #d946ef 100%);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-text text-sm
+         border border-text-muted bg-transparent transition-all duration-300 ease-in-out cursor-pointer;
+}
+.btn-outline:hover {
+  @apply border-accent-blue text-accent-blue;
+}
+
+.btn-sm {
+  @apply px-4 py-2 text-xs;
+}
+
+/* ----------------------------------------------------------------
+   8. NAVBAR
+   ---------------------------------------------------------------- */
+.navbar {
+  @apply flex items-center justify-between py-4;
+}
+
+.navbar-logo {
+  @apply h-8 w-auto;
+}
+
+.nav-links {
+  @apply hidden md:flex items-center gap-8;
+}
+
+.nav-link {
+  @apply text-sm text-text-muted font-medium transition-colors duration-200 cursor-pointer;
+}
+.nav-link:hover {
+  @apply text-text;
+}
+
+.nav-link-active {
+  @apply text-text;
+}
+
+.nav-cta {
+  @apply ml-4;
+}
+
+/* ----------------------------------------------------------------
+   9. SERVICE CARD & GRID
+   ---------------------------------------------------------------- */
+.services-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.service-card {
+  @apply relative rounded-2xl border p-6 flex flex-col gap-4
+         transition-all duration-300 ease-in-out;
+  background: rgba(17, 22, 56, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.service-card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.12);
+  transform: translateY(-4px);
+}
+
+.service-card-icon {
+  @apply w-12 h-12 object-contain;
+}
+
+.service-card-title {
+  @apply text-lg font-semibold text-text;
+}
+
+.service-card-description {
+  @apply text-sm text-text-muted leading-relaxed;
+}
+
+/* ----------------------------------------------------------------
+   10. FEATURE SECTION
+   ---------------------------------------------------------------- */
+.feature-section {
+  @apply flex flex-col lg:flex-row items-center gap-12;
+}
+
+.feature-section-reverse {
+  @apply flex flex-col lg:flex-row-reverse items-center gap-12;
+}
+
+.feature-image {
+  @apply flex-1 flex items-center justify-center;
+}
+
+.feature-image img {
+  @apply max-w-full h-auto;
+}
+
+.feature-content {
+  @apply flex-1 flex flex-col gap-4;
+}
+
+.feature-content .heading-md {
+  @apply leading-snug;
+}
+
+/* ----------------------------------------------------------------
+   11. TEAM
+   ---------------------------------------------------------------- */
+.team-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-6;
+}
+
+.team-card {
+  @apply relative rounded-2xl p-6 flex flex-col items-center text-center gap-3
+         transition-all duration-300;
+  background: rgba(17, 22, 56, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.team-card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  transform: translateY(-4px);
+}
+
+.team-card-image {
+  @apply w-24 h-24 rounded-full object-cover;
+  border: 3px solid transparent;
+  background-image:
+    linear-gradient(rgba(17, 22, 56, 1), rgba(17, 22, 56, 1)),
+    linear-gradient(
+      135deg,
+      var(--color-accent-blue),
+      var(--color-accent-purple)
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.team-card-name {
+  @apply text-base font-semibold text-text;
+}
+
+.team-card-role {
+  @apply text-sm text-text-muted;
+}
+
+/* ----------------------------------------------------------------
+   12. NEWSLETTER
+   ---------------------------------------------------------------- */
+.newsletter-section {
+  @apply text-center flex flex-col items-center gap-6;
+}
+
+.newsletter-form {
+  @apply flex flex-col sm:flex-row items-center gap-3 w-full max-w-lg;
+}
+
+.newsletter-input {
+  @apply flex-1 w-full px-5 py-3 rounded-lg text-sm text-text placeholder-text-dim
+         border border-border-glass outline-none transition-colors duration-200;
+  background: rgba(17, 22, 56, 0.8);
+}
+.newsletter-input:focus {
+  border-color: var(--color-accent-blue);
+}
+
+.newsletter-btn {
+  @apply px-6 py-3 rounded-lg font-semibold text-text text-sm whitespace-nowrap
+         transition-all duration-300 cursor-pointer;
+  background: linear-gradient(90deg, #2563eb 0%, #d946ef 100%);
+}
+.newsletter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* ----------------------------------------------------------------
+   13. FOOTER
+   ---------------------------------------------------------------- */
+.footer {
+  @apply border-t;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-8;
+}
+
+.footer-column-title {
+  @apply text-sm font-semibold text-text mb-4 uppercase tracking-wider;
+}
+
+.footer-link {
+  @apply text-sm text-text-muted transition-colors duration-200 block py-1;
+}
+.footer-link:hover {
+  @apply text-text;
+}
+
+.footer-social {
+  @apply flex items-center gap-4;
+}
+
+.footer-social-icon {
+  @apply w-5 h-5 opacity-60 hover:opacity-100 transition-opacity duration-200;
+}
+
+.footer-bottom {
+  @apply flex flex-col md:flex-row items-center justify-between pt-8 mt-8;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom-text {
+  @apply text-xs text-text-dim;
+}
+
+/* ----------------------------------------------------------------
+   14. RESPONSIVE
+   ---------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .section__padding {
+    padding: 3rem 3rem;
+  }
+  .section__margin {
+    margin: 3rem 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section__padding {
+    padding: 2rem 1.5rem;
+  }
+  .section__margin {
+    margin: 2rem 1.5rem;
+  }
+
+  .heading-xl {
+    @apply text-3xl;
+  }
+
+  .heading-lg {
+    @apply text-2xl;
+  }
+
+  .team-grid {
+    @apply grid-cols-2 gap-4;
+  }
+
+  .footer-grid {
+    @apply grid-cols-2 gap-6;
+  }
+
+  .feature-section,
+  .feature-section-reverse {
+    @apply gap-8;
+  }
+}
+
+@media (max-width: 480px) {
+  .section__padding {
+    padding: 1.5rem 1rem;
+  }
+  .section__margin {
+    margin: 1.5rem 1rem;
+  }
+
+  .services-grid {
+    @apply grid-cols-1;
+  }
 }
