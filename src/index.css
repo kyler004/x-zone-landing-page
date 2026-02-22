@@ -265,7 +265,7 @@ body {
 }
 
 .service-card {
-  @apply relative rounded-2xl border p-6 flex flex-col gap-4
+  @apply relative rounded-2xl border p-6 flex justify-center items-center flex-col gap-6
          transition-all duration-300 ease-in-out;
   background: rgba(17, 22, 56, 0.6);
   border-color: rgba(255, 255, 255, 0.08);

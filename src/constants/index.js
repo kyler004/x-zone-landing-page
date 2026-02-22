@@ -51,6 +51,7 @@ export const teamMembers = [
 export const services = [
   {
     id: 1,
+    color: "bg-gradient-to-br from-[#8A7FD9] to-[#402F8F]",
     icon: "/checklist 2.svg",
     title: "Order Management",
     description:
@@ -58,6 +59,7 @@ export const services = [
   },
   {
     id: 2,
+    color: "bg-gradient-to-br from-[#D97F95] to-[#923250]",
     icon: "/2 1.svg",
     title: "Social Assistant",
     description:
@@ -65,6 +67,7 @@ export const services = [
   },
   {
     id: 3,
+    color: "bg-gradient-to-br from-[#84D8ED] to-[#4292BB]",
     icon: "/bitcoin 1.svg",
     title: "Crypto Platform",
     description:
@@ -72,6 +75,7 @@ export const services = [
   },
   {
     id: 4,
+    color: "bg-gradient-to-br from-[#92EFC3] to-[#2F8F5B]",
     icon: "/checklist 2-1.svg",
     title: "Smart Trading Modules",
     description:
@@ -79,6 +83,7 @@ export const services = [
   },
   {
     id: 5,
+    color: "bg-gradient-to-br from-[#BC7FD9] to-[#923283]",
     icon: "/3 1.svg",
     title: "Analyzer of the News",
     description:
@@ -86,6 +91,7 @@ export const services = [
   },
   {
     id: 6,
+    color: "bg-gradient-to-br from-[#8684ED] to-[#4247BB]",
     icon: "/5 1.png",
     title: "Module of Price Notification",
     description:
