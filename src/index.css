@@ -294,7 +294,7 @@ body {
    10. FEATURE SECTION
    ---------------------------------------------------------------- */
 .feature-section {
-  @apply flex flex-col lg:flex-row items-center gap-12;
+  @apply flex flex-col lg:flex-row items-center gap-16;
 }
 
 .feature-section-reverse {
@@ -310,7 +310,7 @@ body {
 }
 
 .feature-content {
-  @apply flex-1 flex flex-col gap-4;
+  @apply flex-1 flex flex-col gap-6;
 }
 
 .feature-content .heading-md {
