@@ -24,25 +24,25 @@ export const navLinks = [
 export const teamMembers = [
   {
     id: 1,
-    profilePicture: "Rectangle 56.png",
+    profilePicture: "/Rectangle 56.png",
     name: "Sunny Khan",
     role: "Executive officer", // you'll need to add a capitalize prop to the component
   },
   {
     id: 2,
-    profilePicture: "Rectangle 56-3.png",
+    profilePicture: "/Rectangle 56-3.png",
     name: "Alina Jesia",
     role: "UX/UI Designer", // you'll need to add a capitalize prop to the component
   },
   {
     id: 3,
-    profilePicture: "Rectangle 56-2.png",
+    profilePicture: "/Rectangle 56-2.png",
     name: "Alex Sohag",
     role: "Business Development", // you'll need to add a capitalize prop to the component
   },
   {
     id: 4,
-    profilePicture: "Rectangle 56-1.png",
+    profilePicture: "/Rectangle 56-1.png",
     name: "Afroza Mou",
     role: "Head of Marketing", // you'll need to add a capitalize prop to the component
   },

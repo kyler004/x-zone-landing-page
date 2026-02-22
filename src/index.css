@@ -325,7 +325,7 @@ body {
 }
 
 .team-card {
-  @apply relative rounded-2xl p-6 flex flex-col items-center text-center gap-3
+  @apply relative rounded-3xl p-4 flex flex-col items-center text-center gap-1
          transition-all duration-300;
   background: rgba(17, 22, 56, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -338,7 +338,7 @@ body {
 }
 
 .team-card-image {
-  @apply w-24 h-24 rounded-full object-cover;
+  @apply w-42 h-42 rounded-full object-cover;
   border: 3px solid transparent;
   background-image:
     linear-gradient(rgba(17, 22, 56, 1), rgba(17, 22, 56, 1)),
@@ -352,11 +352,11 @@ body {
 }
 
 .team-card-name {
-  @apply text-base font-semibold text-text;
+  @apply text-2xl font-semibold text-text;
 }
 
 .team-card-role {
-  @apply text-sm text-text-muted;
+  @apply text-lg text-white uppercase;
 }
 
 /* ----------------------------------------------------------------
