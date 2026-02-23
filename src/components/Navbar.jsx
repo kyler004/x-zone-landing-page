@@ -8,7 +8,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="navbar section-container relative">
+    <header className="navbar section__padding relative">
       <div className="navbar-logo">
         <img src="/Logo.png" alt="x-zone's logo" className="h-8 w-auto" />
       </div>

@@ -3,6 +3,7 @@ import React from "react";
 const Features = () => {
   return (
     <section className="section__margin feature-section">
+      <div className="h-24 w-24 glow-orb glow-orb-purple" />
       <div className="feature-image">
         <img
           src="man-working-using-virtual-reality-4019408-3337377@0 1.png"

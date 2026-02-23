@@ -1,4 +1,5 @@
 import React from "react";
+import { Send } from "lucide-react";
 
 const Newsletter = () => {
   return (
@@ -19,7 +20,9 @@ const Newsletter = () => {
             type="email"
             placeholder="Enter your email"
           />
-          <button className="newsletter-btn">Subscribe</button>
+          <button className="newsletter-btn flex flex-row gap-2">
+            <Send size={20} /> Subscribe
+          </button>
         </div>
       </div>
     </section>
