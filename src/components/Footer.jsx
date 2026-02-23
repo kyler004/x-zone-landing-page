@@ -1,107 +1,167 @@
 import React from "react";
+import { MapPin, PhoneCall, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="footer section__padding">
       <div className="section-container">
+        {/* Main Footer Content */}
         <div className="footer-grid">
-          {/* Column 1: Logo and Socials */}
-          <div className="flex flex-col gap-6 navbar-logo">
-            <img src="/Logo.png" alt="X-Zone Logo" />
-            <p className="body-text-sm max-w-xs overflow-hidden">
-              Experience the future of digital interaction with X-Zone. We
-              provide cutting-edge solutions for the modern web.
-            </p>
+          {/* Brand and Contact Section */}
+          <div className="flex flex-col gap-6">
+            <div className="navbar-logo">
+              <img src="/Logo.png" alt="Logo" className="h-8 w-auto" />
+            </div>
+            <div className="flex flex-col gap-4">
+              <p className="flex items-center gap-3 body-text-sm">
+                <MapPin className="w-4 h-4 text-accent-cyan" /> Dhaka,
+                Bangladesh
+              </p>
+              <p className="flex items-center gap-3 body-text-sm">
+                <PhoneCall className="w-4 h-4 text-accent-cyan" /> 0943833399
+              </p>
+              <p className="flex items-center gap-3 body-text-sm">
+                <Mail className="w-4 h-4 text-accent-cyan" /> support@zone.com
+              </p>
+            </div>
             <div className="footer-social">
               <a href="#" className="footer-social-icon">
                 <img src="/ic-facebook.svg" alt="Facebook" />
               </a>
               <a href="#" className="footer-social-icon">
+                <img src="/twitter-line.svg" alt="Twitter" />
+              </a>
+              <a href="#" className="footer-social-icon">
                 <img src="/ic-instagram.svg" alt="Instagram" />
               </a>
               <a href="#" className="footer-social-icon">
-                <img src="/twitter-fill.svg" alt="Twitter" />
-              </a>
-              <a href="#" className="footer-social-icon">
-                <img src="/linkedin-box-fill.svg" alt="LinkedIn" />
+                <img src="/ic-pinterset.svg" alt="Pinterest" />
               </a>
             </div>
           </div>
 
-          {/* Column 2: Explore */}
-          <div>
-            <h4 className="footer-column-title">Explore</h4>
-            <div className="flex flex-col">
-              <a href="#home" className="footer-link">
-                Home
-              </a>
-              <a href="#services" className="footer-link">
-                Services
-              </a>
-              <a href="#features" className="footer-link">
-                Features
-              </a>
-              <a href="#team" className="footer-link">
-                Team
-              </a>
+          {/* Links Columns Container */}
+          <div className="md:col-span-3 grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+              <h3 className="footer-column-title">Service</h3>
+              <ul className="flex flex-col gap-2">
+                <li>
+                  <a href="#" className="footer-link">
+                    Order Management
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Social Assistant
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Crypto Platform
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Analyzer of the News
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          {/* Column 3: Resources */}
-          <div>
-            <h4 className="footer-column-title">Resources</h4>
-            <div className="flex flex-col">
-              <a href="#" className="footer-link">
-                Help Center
-              </a>
-              <a href="#" className="footer-link">
-                Partner
-              </a>
-              <a href="#" className="footer-link">
-                Community
-              </a>
-              <a href="#" className="footer-link">
-                Developers
-              </a>
+            <div>
+              <h3 className="footer-column-title">Company</h3>
+              <ul className="flex flex-col gap-2">
+                <li>
+                  <a href="#" className="footer-link">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    News
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Our trusted partner
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    New users FAQ
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          {/* Column 4: Company */}
-          <div>
-            <h4 className="footer-column-title">Company</h4>
-            <div className="flex flex-col">
-              <a href="#" className="footer-link">
-                About Us
-              </a>
-              <a href="#" className="footer-link">
-                Career
-              </a>
-              <a href="#" className="footer-link">
-                News
-              </a>
-              <a href="#" className="footer-link">
-                Contact
-              </a>
+            <div>
+              <h3 className="footer-column-title">Supports</h3>
+              <ul className="flex flex-col gap-2">
+                <li>
+                  <a href="#" className="footer-link">
+                    Help center
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Feedback
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Contact us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Terms conditions
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="footer-column-title">Resources</h3>
+              <ul className="flex flex-col gap-2">
+                <li>
+                  <a href="#" className="footer-link">
+                    Download app
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    What’s new
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="footer-link">
+                    Sitemap
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="footer-bottom">
           <p className="footer-bottom-text">
-            © {new Date().getFullYear()} X-Zone. All rights reserved.
+            © 2021 Zone. - All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
-              className="footer-bottom-text hover:text-text transition-colors"
-            >
-              Privacy Policy
+            <a href="#" className="footer-link text-xs">
+              Privacy
             </a>
-            <a
-              href="#"
-              className="footer-bottom-text hover:text-text transition-colors"
-            >
-              Terms & Services
+            <a href="#" className="footer-link text-xs">
+              Security
+            </a>
+            <a href="#" className="footer-link text-xs">
+              Terms
             </a>
           </div>
         </div>
