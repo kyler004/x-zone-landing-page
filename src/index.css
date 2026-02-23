@@ -257,6 +257,25 @@ body {
   @apply ml-4;
 }
 
+.nav-mobile-menu {
+  @apply fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 md:hidden;
+  background: rgba(10, 14, 39, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  animation: slideInDown 0.3s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* ----------------------------------------------------------------
    9. SERVICE CARD & GRID
    ---------------------------------------------------------------- */
