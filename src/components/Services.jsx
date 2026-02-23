@@ -13,7 +13,7 @@ const Services = () => {
       </p>
       <div className="services-grid mt-10">
         {services.map((service) => (
-          <div key={service.id} className="service-card">
+          <div key={service.id} className="service-card ">
             <div className={` inline-block rounded-full p-4 ${service.color}`}>
               <img
                 src={service.icon}

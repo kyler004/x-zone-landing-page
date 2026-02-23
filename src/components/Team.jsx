@@ -15,7 +15,7 @@ const Team = () => {
 
       <div className="team-grid">
         {teamMembers.map((member) => (
-          <div key={member.id} className="team-card">
+          <div key={member.id} className="team-card gradient-border">
             <div className="team-image">
               <img src={member.profilePicture} alt={member.name} />
             </div>

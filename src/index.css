@@ -367,11 +367,11 @@ body {
 }
 
 .newsletter-form {
-  @apply flex flex-col sm:flex-row items-center gap-3 w-full max-w-lg;
+  @apply flex flex-col sm:flex-row justify-center items-center gap-3 w-full max-w-lg;
 }
 
 .newsletter-input {
-  @apply flex-1 w-full px-5 py-3 rounded-lg text-sm text-text placeholder-text-dim
+  @apply min-w-xl flex-1 w-full px-12 py-6 rounded-full text-sm text-text placeholder-text-dim
          border border-border-glass outline-none transition-colors duration-200;
   background: rgba(17, 22, 56, 0.8);
 }
@@ -380,7 +380,7 @@ body {
 }
 
 .newsletter-btn {
-  @apply px-6 py-3 rounded-lg font-semibold text-text text-sm whitespace-nowrap
+  @apply px-12 py-6 rounded-full font-semibold text-text text-sm -translate-x-16 whitespace-nowrap
          transition-all duration-300 cursor-pointer;
   background: linear-gradient(90deg, #2563eb 0%, #d946ef 100%);
 }
