@@ -3,7 +3,7 @@ import { Send } from "lucide-react";
 
 const Newsletter = () => {
   return (
-    <section className="section-container section__margin">
+    <section className="section__margin">
       <div className="newsletter-section glass-card glass-card-hover glass-card-glow section__padding">
         <div className="max-w-3xl mx-auto">
           <h2 className="heading-lg text-center">
