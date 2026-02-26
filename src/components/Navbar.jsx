@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { navLinks } from "../constants";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,12 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="navbar section__padding relative">
+    <motion.header
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="navbar section__padding relative"
+    >
       <div className="navbar-logo">
         <img src="/Logo.png" alt="x-zone's logo" className="h-8 w-auto" />
       </div>
@@ -24,7 +30,9 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button className="nav-cta btn-primary">Contact Us</button>
+        <button className="nav-cta btn-primary hover:scale-105 transition-all">
+          Contact Us
+        </button>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -60,7 +68,7 @@ const Navbar = () => {
           </button>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 };
 

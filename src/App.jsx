@@ -13,9 +13,15 @@ const App = () => {
     <div className="relative min-h-screen bg-primary overflow-hidden">
       {/* Background Glow Effects */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-accent-blue/20 blur-[150px]" />
-        <div className="absolute top-[10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-accent-purple/20 blur-[150px]" />
-        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-accent-cyan/15 blur-[150px]" />
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-accent-blue/20 blur-[150px] animate-orb-drift md:w-[80%] md:h-[80%]" />
+        <div
+          className="absolute top-[10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-accent-purple/20 blur-[150px] animate-orb-pulse"
+          style={{ animationDelay: "2s" }}
+        />
+        <div
+          className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-accent-cyan/15 blur-[150px] animate-orb-drift"
+          style={{ animationDelay: "4s", animationDuration: "15s" }}
+        />
       </div>
 
       {/* Main Content */}
