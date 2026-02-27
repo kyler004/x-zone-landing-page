@@ -145,7 +145,8 @@ body {
 }
 
 .glass-card-hover {
-  @apply transition-all duration-300 ease-in-out;
+  @apply transition-all duration-300 ease-in-o
+ut;
 }
 .glass-card-hover:hover {
   border-color: rgba(37, 99, 235, 0.3);

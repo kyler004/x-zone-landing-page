@@ -1,16 +1,59 @@
-# React + Vite
+# X-Zone Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, highly responsive landing page built with React, Vite, and Tailwind CSS. The project features a premium design aesthetic with glassmorphism, animated gradients, and micro-interactions.
 
-Currently, two official plugins are available:
+## 📁 Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project follows a component-driven architecture organized into focused functional areas:
 
-## React Compiler
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Navbar.jsx       # Top navigation bar
+│   ├── Hero.jsx         # Main hero section with CTA
+│   ├── Services.jsx     # Overview of services offered
+│   ├── Features.jsx     # Key features display
+│   ├── Features2.jsx    # Additional features display
+│   ├── Team.jsx         # Team members section
+│   ├── Newsletter.jsx   # Newsletter subscription form
+│   └── Footer.jsx       # Page footer with links
+├── constants/
+│   └── index.js         # Static data and content used across components
+├── App.jsx              # Main application entry point & layout wrapper
+├── main.jsx             # React DOM rendering
+└── index.css            # Global styles, Tailwind directives, and custom animations
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Implementation Details
 
-## Expanding the ESLint configuration
+### Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework:** React 18+ powered by Vite for lightning-fast HMR and building.
+- **Styling:** Tailwind CSS for structural styling, responsive design, and utility classes. Custom animations and complex visual effects are handled in `index.css`.
+- **Icons & Assets:** Public folder contains SVGs and graphical assets used by the components.
+
+### Design System & Aesthetics
+
+- **Backgrounds:** The app uses dynamic, animated glowing orbs (`animate-orb-drift`, `animate-orb-pulse`) positioned absolutely in the background of `App.jsx` to create a modern, immersive feel.
+- **Glassmorphism:** Components frequently use semi-transparent backgrounds with backdrop blurring to create a frosted glass effect over the animated background layer.
+- **Responsiveness:** Designed mobile-first using Tailwind's responsive prefixes (`md:`, `lg:`, etc.) ensuring a seamless experience across all device sizes, particularly optimized as seen in the Newsletter component adjustments.
+- **Animations:** Custom keyframe animations defined in `index.css` bring the page to life (e.g., button pulses, scroll reveals, floating background orbs).
+
+## 🚀 Getting Started
+
+1. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
